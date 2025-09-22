@@ -1,23 +1,25 @@
-# Proposal: A Counterfactual Machine Learning Approach to Evaluating AMR Policy Impact"
-Combating antimicrobial resistance(AMR) has prompted the implementation of numerous policy and antibiotic stewardship efforts. However, evaluating their impact remains challenging, limiting our ability to understand how these interventions may have delayed or prevented transmission—and, in turn, hindering their scalability and adaptation.To address this gap, we propose to develop a counterfactual machine learning framework to simulate how resistance might have evolved under different policy scenarios, providing evidence-based guidance for future AMR interventions. By analyzing how past policy changes—or the absence of change—have contributed to current resistance patterns, we can generate “what-if” scenarios across regions and pathogens. This approach will help estimate the causal impact of antimicrobial and drug-use policies on resistance trends using historical AMR data.Our primary objective is to predict counterfactual resistance trends—scenarios that did not occur but could have—based on patterns of drug usage across different regions. To achieve this, we will focus on Gram negative infections and leverage pharmaceutical datasets such as Merck-SMART Surveillance, Pfizer-ATLAS, Venus Remedies, Shionogi, and Venatorx-Gears, using demographic information, isolate data, and resistance profiles. Additional external datasets may also be incorporated as needed. The primary deliverables will include side-by-side visualizations of observed versus counterfactual resistance trends under various hypothetical policy scenarios, effect-size estimates quantifying the projected impact of specific interventions on antimicrobial resistance over time, such as the percentage reduction in resistance expected over a given period, and an interactive dashboard. This dashboard will enable policymakers, hospital administrators, and global health agencies to explore multiple intervention scenarios by adjusting key levers such as timing, magnitude, and scope of policy changes and immediately observe the projected impact on AMR. By quantifying how past stewardship shaped resistance patterns and simulating alternate histories, this project offers insights for future AMR interventions. Our counterfactual approach advances methodological innovation in AMR surveillance and informs global policy.
+# 📦 Streamlit App Starter Kit 
+```
+⬆️ (Replace above with your app's name)
+```
 
-# Method: 
-We developed a generalizable counterfactual‐machine‐learning framework to evaluate the impact of national stewardship policies on antimicrobial resistance trends, and illustrate it here using meropenem resistance in Greece. Starting from the ATLAS surveillance database, we converted isolate‐level meropenem MICs into binary resistance calls and aggregated them into a balanced panel of annual resistance rates (proportion of resistant isolates) together with sample counts for each country–year. To adjust for confounding, we engineered covariates reflecting patient demographics (mean age, male‐to‐female ratio), clinical setting mix (counts of ICU, general ward, pediatric, emergency‐room, and unspecified isolates), and a continuous time trend.
-For causal estimation we first performed five‑fold cross‑validated model selection among Random Forest, Gradient Boosting, and Lasso learners to serve as our nuisance regressors for both outcome and treatment. Gradient Boosting emerged as the best performer and was adopted in all subsequent analyses. We then applied Microsoft’s EconML Causal Forest DML estimator—wrapped via DoWhy’s back‑door interface to make our causal assumptions explicit—so as to flexibly learn heterogeneous treatment effects without imposing linearity. To guard against overfitting and hidden bias, we executed three standard refutation tests: (1) adding an irrelevant random covariate, (2) permuting the treatment assignment (placebo), and (3) fitting on random data subsets. In each case, the estimated average treatment effect (ATE) remained within 10% of the original value (p ≥ 0.78), indicating robustness to model specification and sampling variability.
-Finally, we held out 20% of the country–year panel for out‑of‑sample testing. After training the causal forest on the remaining data, we predicted individual policy effects (τ̂) on the test set. These τ̂ estimates enabled two counterfactual scenarios:
-- No‑Policy Counterfactual—estimating what resistance rates would have been had the 2015 stewardship measures never been enacted (Y₀ = Y₁ – τ̂ for treated years), and
-- Early‑Policy Counterfactual—simulating adoption in 2012 (Y₁ = Y₀ + τ̂ for previously untreated years).
-  
-We then aggregated each scenario by year and plotted them alongside observed resistance.
+Description of the app ...
 
-# Results:
-In our Greece example (Figures 1 & 2), observed resistance climbed from ~2% in 2004 to ~27% in 2021. Under the No‑Policy Counterfactual (Figure 1), resistance would have reached ~34% by 2021—seven points above the actual trend—demonstrating the policy’s substantial flattening effect. Under the Early‑Policy Counterfactual (Figure 2), with measures hypothetically in place from 2012, resistance would have peaked near 24% by 2021—three points below the real outcome—highlighting the additional gains from earlier adoption. All DoWhy refutation tests (random common cause, placebo, data subset) produced high p‑values (≥ 0.78), confirming that our causal estimates are not driven by spurious associations or data artifacts.
-These findings underscore the value of timely stewardship policies in slowing AMR progression. Our framework can be readily extended—by incorporating continuous antibiotic‑use metrics, additional pathogens, and other national contexts—and packaged into an interactive tool for policymakers to explore customized “what‑if” scenarios, such as percentage‑based reductions in drug consumption.
+## Demo App
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
 
-## Fig. 1
-<img src="./readme.img/Figure-1.png"> 
+## GitHub Codespaces
 
-## Fig. 2
-<img src="./readme.img/Figure-2.png"> 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
 
+## Section Heading
+
+This is filler text, please replace this with text for this section.
+
+## Further Reading
+
+This is filler text, please replace this with a explanatory text about further relevant resources for this repo
+- Resource 1
+- Resource 2
+- Resource 3
