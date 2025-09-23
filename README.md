@@ -14,8 +14,8 @@ We then aggregated each scenario by year and plotted them alongside observed res
 In our Greece example (Figures 1 & 2), observed resistance climbed from ~2% in 2004 to ~27% in 2021. Under the No‑Policy Counterfactual (Figure 1), resistance would have reached ~34% by 2021—seven points above the actual trend—demonstrating the policy’s substantial flattening effect. Under the Early‑Policy Counterfactual (Figure 2), with measures hypothetically in place from 2012, resistance would have peaked near 24% by 2021—three points below the real outcome—highlighting the additional gains from earlier adoption. All DoWhy refutation tests (random common cause, placebo, data subset) produced high p‑values (≥ 0.78), confirming that our causal estimates are not driven by spurious associations or data artifacts.
 These findings underscore the value of timely stewardship policies in slowing AMR progression. Our framework can be readily extended—by incorporating continuous antibiotic‑use metrics, additional pathogens, and other national contexts—and packaged into an interactive tool for policymakers to explore customized “what‑if” scenarios, such as percentage‑based reductions in drug consumption.
 
-<img src="./readme.img/figure-1.svg" width=300> 
+<img src="./readme.img/Figure-1.png" width=300>
 Fig. 1
 
-<img src="./readme.img/figure-2.svg" width=300> 
+<img src="./readme.img/Figure-2.png" width=300>
 Fig. 2
